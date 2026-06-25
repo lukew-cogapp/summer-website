@@ -6,17 +6,28 @@ interface Props {
   description?: string
   /** Tailwind classes applied to <body> to set the page theme background + base text colour */
   themeClass?: string
+  /** Site-relative path to a social-share image (defaults to the favicon). */
+  ogImage?: string
 }
+
+const siteName = 'Summer'
 
 const {
   title,
   description = 'Summer — management & leadership, care, and hairdressing.',
   themeClass = 'bg-white text-slate-900',
+  ogImage = '/favicon.svg',
 } = Astro.props
 
 const base = import.meta.env.BASE_URL
 /** Join the configured base path with a leading-slash route. */
 const withBase = (p: string) => `${base.replace(/\/$/, '')}${p}`
+
+// Pages already self-brand their titles (e.g. "Summer — Care"), so use as-is.
+const pageTitle = title
+// Absolute URLs for canonical + social tags, resolved against `site` in astro.config.
+const canonical = new URL(Astro.url.pathname, Astro.site)
+const ogImageUrl = new URL(withBase(ogImage), Astro.site)
 
 const nav = [
   { href: withBase('/'), label: 'Home' },
@@ -38,9 +49,28 @@ const path = Astro.url.pathname
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#ec4899" />
+
+    <title>{pageTitle}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
-    <title>{title}</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:locale" content="en_GB" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
   </head>
   <body class={`min-h-dvh antialiased ${themeClass}`}>
     <header class="sticky top-0 z-50 border-b border-black/10 bg-white/70 backdrop-blur">
