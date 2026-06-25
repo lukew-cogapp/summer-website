@@ -1,0 +1,76 @@
+---
+import '../styles/global.css'
+
+interface Props {
+  title: string
+  description?: string
+  /** Tailwind classes applied to <body> to set the page theme background + base text colour */
+  themeClass?: string
+}
+
+const {
+  title,
+  description = 'Summer — management & leadership, care, and hairdressing.',
+  themeClass = 'bg-white text-slate-900',
+} = Astro.props
+
+const nav = [
+  { href: '/', label: 'Home' },
+  { href: '/management/', label: 'Leadership' },
+  { href: '/care/', label: 'Care' },
+  { href: '/hairdressing/', label: 'Hairdressing' },
+  { href: '/army/', label: 'Army Trainer' },
+]
+
+const path = Astro.url.pathname
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class={`min-h-dvh antialiased ${themeClass}`}>
+    <header class="sticky top-0 z-50 border-b border-black/10 bg-white/70 backdrop-blur">
+      <nav class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
+        <a href="/" class="flex items-center gap-2 font-bold text-slate-900">
+          <span class="inline-block h-3 w-3 rounded-full bg-pink-500"></span>
+          Summer
+        </a>
+        <ul class="flex flex-wrap items-center gap-1 text-sm">
+          {
+            nav.map((item) => {
+              const active = path === item.href
+              return (
+                <li>
+                  <a
+                    href={item.href}
+                    class={`rounded-full px-3 py-1.5 font-medium transition-colors ${
+                      active
+                        ? 'bg-pink-500 text-white'
+                        : 'text-slate-600 hover:bg-pink-100 hover:text-slate-900'
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              )
+            })
+          }
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="border-t border-black/10 bg-white/60 py-8 text-center text-sm text-slate-500">
+      <p>© {new Date().getFullYear()} Summer. Made with pink hair and good vibes.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,243 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const services = [
+  {
+    name: 'Cut & finish',
+    price: 'from £35',
+    desc: 'A precision cut tailored to your face shape, hair type and the way you actually style it at home.',
+    icon: '✂️',
+  },
+  {
+    name: 'Full colour',
+    price: 'from £60',
+    desc: 'Glossy, even, all-over colour. From subtle tonal shifts to a complete reinvention.',
+    icon: '🎨',
+  },
+  {
+    name: 'Balayage',
+    price: 'from £95',
+    desc: 'Hand-painted, sun-kissed dimension that grows out beautifully with low upkeep.',
+    icon: '🌅',
+  },
+  {
+    name: 'Vivid & fashion colour',
+    price: 'from £110',
+    desc: 'Pinks, lilacs, electric blues. The bold stuff. My favourite kind of brief.',
+    icon: '💖',
+  },
+  {
+    name: 'Blow-dry & styling',
+    price: 'from £30',
+    desc: 'Big bouncy volume, sleek and glassy, or tousled and undone. Whatever the occasion calls for.',
+    icon: '💨',
+  },
+  {
+    name: 'Treatments & repair',
+    price: 'from £25',
+    desc: 'Bond-building, deep conditioning and gloss treatments to keep colour-treated hair healthy.',
+    icon: '✨',
+  },
+]
+
+const specialities = [
+  {
+    title: 'Creative colour',
+    desc: 'I live for a custom blend. Melted roots, balayage and bespoke toning that looks intentional, never flat.',
+  },
+  {
+    title: 'Vivid & fashion shades',
+    desc: 'I wear my own pink with pride, so I know vivids inside out: pre-lightening, placement and how to keep them vibrant.',
+  },
+  {
+    title: 'Precision cutting',
+    desc: 'Sharp bobs, soft layers, fringes that suit your face. Cuts built to grow out gracefully.',
+  },
+]
+
+const experience = [
+  {
+    role: 'Senior Stylist & Colour Specialist',
+    place: 'Bloom Studio, Brighton',
+    period: '2021 – present',
+    detail:
+      'Leading colour for a busy independent salon, mentoring junior stylists and building a loyal client base of vivid-colour regulars.',
+  },
+  {
+    role: 'NVQ Level 3 in Hairdressing',
+    place: 'City College',
+    period: '2018 – 2020',
+    detail:
+      'Distinction. Followed by advanced colour-correction and balayage certifications with leading professional brands.',
+  },
+]
+
+const stats = [
+  { value: '7+', label: 'years behind the chair' },
+  { value: '40+', label: 'shades of pink tried' },
+  { value: '∞', label: 'good chats' },
+]
+---
+
+<Layout
+  title="Summer — Hairdressing"
+  description="Summer: hair stylist and colour specialist. Creative colour, vivid shades and precision cuts."
+  themeClass="bg-pink-50 text-pink-950"
+>
+  <!-- Hero -->
+  <section
+    class="bg-gradient-to-br from-pink-500 via-fuchsia-500 to-rose-500 text-white"
+  >
+    <div class="mx-auto max-w-5xl px-4 py-20 sm:py-28">
+      <p class="mb-4 inline-block rounded-full bg-white/20 px-4 py-1 text-sm font-semibold backdrop-blur">
+        Hair stylist & colour specialist
+      </p>
+      <h1 class="text-5xl font-black tracking-tight sm:text-7xl">
+        Hi, I'm <span class="text-pink-100">Summer</span>.
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg text-pink-50 sm:text-xl">
+        I make hair that turns heads. Bold colour, sharp cuts and a chair that
+        always comes with good conversation. Yes, the pink is real, and yes, I
+        did it myself.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a
+          href="#book"
+          class="rounded-full bg-white px-6 py-3 font-bold text-fuchsia-600 shadow-lg transition-transform hover:scale-105"
+        >
+          Book a chair
+        </a>
+        <a
+          href="#services"
+          class="rounded-full border-2 border-white/60 px-6 py-3 font-bold text-white transition-colors hover:bg-white/15"
+        >
+          See the menu
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="mx-auto max-w-5xl px-4 py-16 sm:py-20">
+    <div class="mb-10 text-center">
+      <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">The menu</h2>
+      <p class="mt-3 text-pink-700">A little of everything. A lot of pink.</p>
+    </div>
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        services.map((s) => (
+          <article class="group rounded-3xl border border-pink-100 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-pink-300 hover:shadow-xl">
+            <div class="mb-4 flex items-start justify-between gap-3">
+              <span class="text-3xl transition-transform group-hover:scale-110">
+                {s.icon}
+              </span>
+              <span class="rounded-full bg-pink-100 px-3 py-1 text-sm font-bold text-fuchsia-700">
+                {s.price}
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-pink-950">{s.name}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-pink-800/80">{s.desc}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Specialities -->
+  <section class="bg-gradient-to-br from-fuchsia-600 to-pink-600 text-white">
+    <div class="mx-auto max-w-5xl px-4 py-16 sm:py-20">
+      <div class="mb-10 text-center">
+        <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">
+          What I love most
+        </h2>
+        <p class="mt-3 text-pink-100">The work that makes me lose track of time.</p>
+      </div>
+      <div class="grid gap-5 sm:grid-cols-3">
+        {
+          specialities.map((sp) => (
+            <article class="rounded-3xl bg-white/10 p-6 backdrop-blur transition-colors hover:bg-white/15">
+              <h3 class="text-lg font-bold">{sp.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-pink-50/90">
+                {sp.desc}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats band -->
+  <section class="mx-auto max-w-5xl px-4 py-12">
+    <div
+      class="grid grid-cols-3 gap-4 rounded-3xl border border-pink-100 bg-white p-8 text-center shadow-sm"
+    >
+      {
+        stats.map((stat) => (
+          <div>
+            <div class="bg-gradient-to-br from-pink-500 to-fuchsia-600 bg-clip-text text-4xl font-black text-transparent sm:text-5xl">
+              {stat.value}
+            </div>
+            <div class="mt-1 text-xs font-medium uppercase tracking-wide text-pink-700 sm:text-sm">
+              {stat.label}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="mx-auto max-w-5xl px-4 py-8">
+    <blockquote class="text-center">
+      <p class="text-2xl font-bold italic text-fuchsia-700 sm:text-3xl">
+        "Good hair is the best outfit you'll ever wear."
+      </p>
+      <footer class="mt-3 text-sm font-medium text-pink-600">— me, most days</footer>
+    </blockquote>
+  </section>
+
+  <!-- Experience -->
+  <section class="mx-auto max-w-5xl px-4 py-16 sm:py-20">
+    <h2 class="mb-10 text-center text-3xl font-extrabold tracking-tight sm:text-4xl">
+      Training & experience
+    </h2>
+    <div class="grid gap-5 sm:grid-cols-2">
+      {
+        experience.map((e) => (
+          <article class="rounded-3xl border border-pink-100 bg-white p-6 shadow-sm">
+            <div class="flex items-baseline justify-between gap-3">
+              <h3 class="text-lg font-bold text-pink-950">{e.role}</h3>
+              <span class="shrink-0 text-xs font-medium text-pink-500">
+                {e.period}
+              </span>
+            </div>
+            <p class="mt-1 text-sm font-semibold text-fuchsia-600">{e.place}</p>
+            <p class="mt-3 text-sm leading-relaxed text-pink-800/80">{e.detail}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="book" class="mx-auto max-w-5xl px-4 pb-20">
+    <div
+      class="rounded-[2rem] bg-gradient-to-br from-pink-500 via-fuchsia-500 to-rose-500 p-10 text-center text-white shadow-xl sm:p-16"
+    >
+      <h2 class="text-3xl font-black tracking-tight sm:text-5xl">
+        Ready for a change?
+      </h2>
+      <p class="mx-auto mt-4 max-w-xl text-lg text-pink-50">
+        Whether it's a trim, a transformation or your first dip into vivid
+        colour, let's chat it through. The kettle's always on.
+      </p>
+      <a
+        href="mailto:summer@example.com"
+        class="mt-8 inline-block rounded-full bg-white px-8 py-4 text-lg font-bold text-fuchsia-600 shadow-lg transition-transform hover:scale-105"
+      >
+        Book a chair →
+      </a>
+    </div>
+  </section>
+</Layout>

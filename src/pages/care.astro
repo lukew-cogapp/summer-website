@@ -1,0 +1,196 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const careAreas = [
+  {
+    emoji: '🧸',
+    title: 'Children & young people',
+    blurb:
+      'Creating safe, playful spaces where children feel seen, supported and free to grow at their own pace.',
+    skills: [
+      'Play & learning activities',
+      'Emotional support',
+      'Routine & boundaries',
+      'Family liaison',
+    ],
+  },
+  {
+    emoji: '🤝',
+    title: 'Vulnerable adults',
+    blurb:
+      'Person-centred support that protects dignity and independence, meeting each person where they are.',
+    skills: ['Daily living support', 'Safeguarding awareness', 'Confidence building', 'Advocacy'],
+  },
+  {
+    emoji: '🌷',
+    title: 'Elderly & senior care',
+    blurb:
+      'Warm, patient companionship and practical care that helps older people live well and feel valued.',
+    skills: ['Companionship', 'Mobility assistance', 'Medication reminders', 'Wellbeing checks'],
+  },
+]
+
+const qualifications = [
+  'Safeguarding trained',
+  'First aid certified',
+  'DBS checked',
+  'Medication support',
+  'Person-centred care',
+  'Patience & empathy',
+  'Clear communication',
+  'Manual handling',
+  'Dignity & respect',
+  'Confidentiality',
+]
+
+const experience = [
+  {
+    role: 'Care Support Worker',
+    place: 'Sunnyside Residential Home',
+    dates: '2022 – Present',
+    bullets: [
+      'Provide daily personal and emotional care to a group of residents with varied needs.',
+      'Support medication routines and liaise closely with families and nursing staff.',
+      'Champion a calm, dignified atmosphere across the home.',
+    ],
+  },
+  {
+    role: 'Childcare & Youth Assistant',
+    place: 'Bright Beginnings Centre',
+    dates: '2020 – 2022',
+    bullets: [
+      'Planned and led play, learning and creative activities for children of all ages.',
+      'Helped children build confidence, friendships and healthy routines.',
+      'Maintained safeguarding standards and detailed daily records.',
+    ],
+  },
+]
+---
+
+<Layout
+  title="Summer — Care"
+  description="Summer — compassionate, person-centred care for children, vulnerable adults and the elderly."
+  themeClass="bg-teal-50 text-teal-950"
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div
+      class="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-orange-200/50 blur-3xl"
+    >
+    </div>
+    <div
+      class="pointer-events-none absolute -bottom-32 -left-24 h-72 w-72 rounded-full bg-pink-200/40 blur-3xl"
+    >
+    </div>
+    <div class="mx-auto max-w-5xl px-4 py-20 sm:py-28">
+      <span
+        class="inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-1.5 text-sm font-medium text-teal-700 shadow-sm ring-1 ring-teal-100"
+      >
+        <span class="inline-block h-2 w-2 rounded-full bg-pink-500"></span>
+        Compassionate care
+      </span>
+      <h1 class="mt-6 text-4xl font-bold tracking-tight text-teal-950 sm:text-6xl">
+        Hi, I'm <span class="text-teal-600">Summer</span>.
+      </h1>
+      <p class="mt-5 max-w-2xl text-lg leading-relaxed text-teal-800 sm:text-xl">
+        I care for people at every stage of life, from little ones taking their first steps to
+        seniors who deserve comfort and respect. Warm, patient and person-centred, I help the
+        people I support feel safe, valued and truly cared for.
+      </p>
+    </div>
+  </section>
+
+  <!-- Three care areas -->
+  <section class="mx-auto max-w-5xl px-4 pb-8">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        careAreas.map((area) => (
+          <article class="group rounded-3xl bg-white/80 p-7 shadow-sm ring-1 ring-teal-100 transition hover:-translate-y-1 hover:shadow-lg hover:ring-teal-200">
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-100 text-2xl transition group-hover:scale-110">
+              <span aria-hidden="true">{area.emoji}</span>
+            </div>
+            <h2 class="mt-5 text-xl font-semibold text-teal-950">{area.title}</h2>
+            <p class="mt-2 text-teal-700 leading-relaxed">{area.blurb}</p>
+            <ul class="mt-4 flex flex-wrap gap-2">
+              {area.skills.map((skill) => (
+                <li class="rounded-full bg-teal-50 px-3 py-1 text-sm text-teal-700 ring-1 ring-teal-100">
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Skills & qualifications -->
+  <section class="mx-auto max-w-5xl px-4 py-16">
+    <div class="rounded-3xl bg-gradient-to-br from-teal-600 to-emerald-600 px-6 py-12 text-white sm:px-12">
+      <h2 class="text-3xl font-bold tracking-tight">Skills & qualifications</h2>
+      <p class="mt-3 max-w-2xl text-teal-50">
+        Trained, trusted and always learning. Here's a little of what I bring to every role.
+      </p>
+      <ul class="mt-8 flex flex-wrap gap-3">
+        {
+          qualifications.map((q) => (
+            <li class="rounded-full bg-white/15 px-4 py-2 text-sm font-medium text-white ring-1 ring-white/25 backdrop-blur transition hover:bg-white/25">
+              {q}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="mx-auto max-w-5xl px-4 pb-16">
+    <h2 class="text-3xl font-bold tracking-tight text-teal-950">Experience</h2>
+    <div class="mt-8 space-y-5">
+      {
+        experience.map((job) => (
+          <article class="rounded-3xl bg-white/80 p-7 shadow-sm ring-1 ring-teal-100">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h3 class="text-xl font-semibold text-teal-950">
+                {job.role}
+                <span class="font-normal text-teal-600"> · {job.place}</span>
+              </h3>
+              <span class="rounded-full bg-pink-100 px-3 py-1 text-sm font-medium text-pink-700">
+                {job.dates}
+              </span>
+            </div>
+            <ul class="mt-4 space-y-2 text-teal-700">
+              {job.bullets.map((b) => (
+                <li class="flex gap-3">
+                  <span class="mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-teal-400" aria-hidden="true" />
+                  <span class="leading-relaxed">{b}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="mx-auto max-w-5xl px-4 pb-24">
+    <div
+      class="rounded-3xl bg-white/80 px-6 py-14 text-center shadow-sm ring-1 ring-teal-100 sm:px-12"
+    >
+      <h2 class="text-3xl font-bold tracking-tight text-teal-950 sm:text-4xl">
+        Looking for someone caring and dependable?
+      </h2>
+      <p class="mx-auto mt-4 max-w-xl text-lg text-teal-700">
+        I'd love to hear about the role and the people I'd be supporting. Let's have a chat.
+      </p>
+      <a
+        href="mailto:summer@example.com"
+        class="mt-8 inline-flex items-center gap-2 rounded-full bg-pink-500 px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-pink-500/25 transition hover:-translate-y-0.5 hover:bg-pink-600 hover:shadow-pink-500/40 focus:outline-none focus-visible:ring-4 focus-visible:ring-pink-300"
+      >
+        <span aria-hidden="true">✉️</span>
+        Get in touch
+      </a>
+    </div>
+  </section>
+</Layout>

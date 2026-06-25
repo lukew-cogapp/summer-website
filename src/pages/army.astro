@@ -1,0 +1,282 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const trains = [
+  {
+    title: 'Physical Training & Fitness',
+    body: 'Strength, conditioning and combat-ready stamina. Sessions built to break plateaus, not recruits.',
+    icon: '🏋️',
+  },
+  {
+    title: 'Drill & Discipline',
+    body: 'Precision movement, sharp standards and the habits that hold a unit together under pressure.',
+    icon: '🎖️',
+  },
+  {
+    title: 'Leadership Under Pressure',
+    body: 'Making the call when it counts. Decision-making, command presence and owning the outcome.',
+    icon: '⚡',
+  },
+  {
+    title: 'Fieldcraft',
+    body: 'Navigation, survival fundamentals and operating effectively in any terrain, any weather.',
+    icon: '🧭',
+  },
+  {
+    title: 'Team Cohesion',
+    body: 'Forging individuals into a single fighting unit. Trust, communication and shared purpose.',
+    icon: '🤝',
+  },
+  {
+    title: 'Resilience & Mental Toughness',
+    body: 'Grit when it gets hard. Managing fear, fatigue and failure, then coming back stronger.',
+    icon: '🛡️',
+  },
+]
+
+const quals = [
+  'Instructor Certification',
+  'First Aid (Advanced)',
+  'Fitness Assessment',
+  'Weapons Handling Safety',
+  'Navigation & Map Reading',
+  'Risk Management',
+  'Combat Conditioning',
+  'Mental Resilience Coaching',
+]
+
+const record = [
+  {
+    role: 'Senior Physical Training Instructor',
+    org: 'Recruit Training Depot',
+    dates: '2021 — Present',
+    bullets: [
+      'Lead all-arms fitness programming for intakes of 60+ recruits per cycle.',
+      'Designed a progressive conditioning syllabus cutting injury rates by a third.',
+      'Mentored junior instructors on coaching standards and assessment.',
+    ],
+  },
+  {
+    role: 'Field Skills & Drill Instructor',
+    org: 'Combat Training Wing',
+    dates: '2017 — 2021',
+    bullets: [
+      'Delivered drill, fieldcraft and navigation to initial-entry soldiers.',
+      'Ran night exercises and endurance phases in adverse conditions.',
+      'Awarded commendation for instructional excellence.',
+    ],
+  },
+]
+
+const stats = [
+  { value: '200+', label: 'Recruits Trained' },
+  { value: '8', label: 'Years Service' },
+  { value: '40+', label: 'Field Exercises Led' },
+  { value: '100%', label: 'Commitment' },
+]
+
+// Pink camouflage pattern — layered SVG blobs encoded as a data URI background.
+const camoSvg = `<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'><rect width='400' height='400' fill='%23831843'/><path d='M40 30 Q120 10 150 70 Q170 130 100 150 Q30 160 20 90 Q15 50 40 30Z' fill='%23be185d'/><path d='M250 20 Q340 30 360 100 Q370 170 300 180 Q230 175 230 110 Q230 50 250 20Z' fill='%23ec4899'/><path d='M30 230 Q110 210 140 270 Q160 340 80 360 Q10 360 10 290 Q10 250 30 230Z' fill='%23f472b6'/><path d='M260 230 Q360 220 380 290 Q390 360 310 370 Q240 365 240 300 Q240 250 260 230Z' fill='%23be185d'/><path d='M150 150 Q220 140 250 200 Q260 260 190 270 Q130 265 130 210 Q130 170 150 150Z' fill='%23db2777'/><ellipse cx='190' cy='80' rx='34' ry='26' fill='%23f9a8d4'/><ellipse cx='350' cy='220' rx='30' ry='24' fill='%23f9a8d4'/><ellipse cx='60' cy='180' rx='26' ry='20' fill='%23ec4899'/><ellipse cx='200' cy='340' rx='32' ry='24' fill='%23f9a8d4'/></svg>`
+const camoUri = `url("data:image/svg+xml,${camoSvg}")`
+---
+
+<Layout
+  title="Summer — Army Trainer & Military Instructor"
+  description="Summer — physical training instructor and military trainer. Drill, fitness, fieldcraft and leadership under pressure."
+  themeClass="bg-stone-950 text-stone-100"
+>
+  <style define:vars={{ camoUri }}>
+    .pink-camo {
+      background-image: var(--camoUri);
+      background-size: 360px 360px;
+    }
+    .stencil {
+      font-family:
+        'Arial Narrow', 'Helvetica Neue', Impact, system-ui, sans-serif;
+      text-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
+    }
+  </style>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="pink-camo absolute inset-0" aria-hidden="true"></div>
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-stone-950/70 via-stone-950/55 to-stone-950"
+      aria-hidden="true"
+    >
+    </div>
+    <div class="relative mx-auto max-w-5xl px-4 py-24 sm:py-32">
+      <p
+        class="stencil mb-4 inline-block border-2 border-pink-400 bg-stone-950/60 px-3 py-1 text-xs font-bold uppercase tracking-[0.3em] text-pink-300"
+      >
+        Drill Instructor
+      </p>
+      <h1
+        class="stencil text-6xl font-black uppercase leading-none tracking-wide text-white sm:text-8xl"
+      >
+        Summer
+      </h1>
+      <p
+        class="stencil mt-4 max-w-2xl text-xl font-bold uppercase tracking-wide text-pink-200 sm:text-2xl"
+      >
+        Army Trainer &amp; Physical Training Instructor
+      </p>
+      <p class="mt-6 max-w-xl text-base leading-relaxed text-stone-200 sm:text-lg">
+        I forge soft civilians into hard soldiers. Fitness, discipline and
+        fieldcraft, delivered with zero excuses and a whole lot of pink. Show up,
+        switch on, and earn it.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a
+          href="#enlist"
+          class="stencil rounded-sm bg-pink-500 px-6 py-3 text-sm font-black uppercase tracking-widest text-white shadow-lg transition-colors hover:bg-pink-400"
+        >
+          Enlist for training
+        </a>
+        <a
+          href="#train"
+          class="stencil rounded-sm border-2 border-pink-300 px-6 py-3 text-sm font-black uppercase tracking-widest text-pink-200 transition-colors hover:bg-pink-300 hover:text-stone-950"
+        >
+          What I train
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <section class="border-y-4 border-pink-600 bg-stone-900">
+    <div class="mx-auto grid max-w-5xl grid-cols-2 gap-px px-4 py-10 sm:grid-cols-4">
+      {
+        stats.map((s) => (
+          <div class="text-center">
+            <div class="stencil text-4xl font-black text-pink-400 sm:text-5xl">
+              {s.value}
+            </div>
+            <div class="mt-1 text-xs font-bold uppercase tracking-widest text-stone-400">
+              {s.label}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- WHAT I TRAIN -->
+  <section id="train" class="mx-auto max-w-5xl px-4 py-20">
+    <h2
+      class="stencil text-3xl font-black uppercase tracking-wide text-white sm:text-4xl"
+    >
+      What I Train
+    </h2>
+    <div class="mt-2 h-1 w-24 bg-pink-500"></div>
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        trains.map((t) => (
+          <article class="group relative overflow-hidden rounded-sm border border-pink-900/60 bg-stone-900 p-6 transition-colors hover:border-pink-500">
+            <div class="absolute left-0 top-0 h-full w-1 bg-pink-600 transition-all group-hover:w-1.5" />
+            <div class="text-3xl" aria-hidden="true">
+              {t.icon}
+            </div>
+            <h3 class="stencil mt-4 text-lg font-bold uppercase tracking-wide text-pink-200">
+              {t.title}
+            </h3>
+            <p class="mt-2 text-sm leading-relaxed text-stone-300">{t.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- CAMO DIVIDER -->
+  <div class="pink-camo h-3 w-full opacity-80" aria-hidden="true"></div>
+
+  <!-- QUALIFICATIONS -->
+  <section class="bg-stone-900">
+    <div class="mx-auto max-w-5xl px-4 py-20">
+      <h2
+        class="stencil text-3xl font-black uppercase tracking-wide text-white sm:text-4xl"
+      >
+        Skills &amp; Qualifications
+      </h2>
+      <div class="mt-2 h-1 w-24 bg-pink-500"></div>
+      <div class="mt-8 flex flex-wrap gap-3">
+        {
+          quals.map((q) => (
+            <span class="stencil rounded-sm border border-pink-500/50 bg-stone-950 px-4 py-2 text-xs font-bold uppercase tracking-widest text-pink-200 transition-colors hover:border-pink-400 hover:bg-pink-500 hover:text-white">
+              {q}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE RECORD -->
+  <section class="mx-auto max-w-5xl px-4 py-20">
+    <h2
+      class="stencil text-3xl font-black uppercase tracking-wide text-white sm:text-4xl"
+    >
+      Service Record
+    </h2>
+    <div class="mt-2 h-1 w-24 bg-pink-500"></div>
+    <div class="mt-10 space-y-6">
+      {
+        record.map((r) => (
+          <article class="relative rounded-sm border-2 border-stone-700 bg-stone-900 p-6 sm:p-8">
+            <span
+              class="stencil pointer-events-none absolute right-4 top-4 select-none text-[10px] font-bold uppercase tracking-[0.3em] text-pink-700/60"
+              aria-hidden="true"
+            >
+              Classified
+            </span>
+            <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+              <h3 class="stencil text-xl font-bold uppercase tracking-wide text-pink-200">
+                {r.role}
+              </h3>
+              <span class="text-xs font-bold uppercase tracking-widest text-stone-400">
+                {r.dates}
+              </span>
+            </div>
+            <p class="mt-1 text-sm font-semibold uppercase tracking-wide text-pink-400">
+              {r.org}
+            </p>
+            <ul class="mt-4 space-y-2">
+              {r.bullets.map((b) => (
+                <li class="flex gap-3 text-sm leading-relaxed text-stone-300">
+                  <span class="mt-1.5 h-1.5 w-1.5 flex-none bg-pink-500" aria-hidden="true" />
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="enlist" class="relative overflow-hidden">
+    <div class="pink-camo absolute inset-0" aria-hidden="true"></div>
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-stone-950/85 to-stone-950/70"
+      aria-hidden="true"
+    >
+    </div>
+    <div class="relative mx-auto max-w-5xl px-4 py-24 text-center">
+      <h2
+        class="stencil text-4xl font-black uppercase tracking-wide text-white sm:text-5xl"
+      >
+        Ready to earn it?
+      </h2>
+      <p class="mx-auto mt-4 max-w-xl text-base text-stone-200 sm:text-lg">
+        No shortcuts. No quitting. If you want to be trained by the best, fall in.
+      </p>
+      <a
+        href="mailto:summer@example.com"
+        class="stencil mt-8 inline-block rounded-sm bg-pink-500 px-10 py-4 text-base font-black uppercase tracking-widest text-white shadow-xl transition-transform hover:scale-105 hover:bg-pink-400"
+      >
+        Enlist for training
+      </a>
+    </div>
+  </section>
+</Layout>
