@@ -1,0 +1,270 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const specialities = [
+  {
+    title: 'Stealth & Infiltration',
+    body: 'In before the kettle boils, out before anyone notices the biscuits are gone. Silent, smooth, never seen.',
+    icon: '🐈‍⬛',
+  },
+  {
+    title: 'Disguise & Cover Identities',
+    body: 'Six passports, a dozen accents and a wig collection that would make a West End wardrobe weep. Now you see her, now you do not.',
+    icon: '🎭',
+  },
+  {
+    title: 'Surveillance',
+    body: 'Eyes everywhere, patience for days. Reads a room in seconds and remembers every detail you wish she had not.',
+    icon: '👁️',
+  },
+  {
+    title: 'Gadgets & Improvisation',
+    body: 'A lipstick that is somehow also a grappling hook. Solves the unsolvable with whatever happens to be in her handbag.',
+    icon: '💄',
+  },
+  {
+    title: 'Escape Driving',
+    body: 'Reverse-parks at speed, loses a tail in three turns and still arrives looking immaculate. Heels optional.',
+    icon: '🏎️',
+  },
+  {
+    title: 'Negotiation',
+    body: 'Charm as the first weapon and the last. Walks into a standoff and walks out with the deal, the table and the room.',
+    icon: '🥂',
+  },
+]
+
+const dossier = [
+  { label: 'Codename', value: 'PINK ORCHID' },
+  { label: 'Clearance', value: 'Level 7 — Eyes Only' },
+  { label: 'Languages', value: 'English, French, Italian, Sarcasm' },
+  { label: 'Signature', value: 'A single pink silk ribbon' },
+  { label: 'Specialism', value: 'Elegant problem removal' },
+  { label: 'Known Weakness', value: 'Excellent espresso' },
+]
+
+const stats = [
+  { value: 'Legend', label: 'Reputation Status' },
+  { value: '0', label: 'Traces Left Behind' },
+  { value: '100%', label: 'Deniability' },
+  { value: '★★★★★', label: 'Discreet & Professional' },
+]
+
+const credentials = [
+  'Graduated top of class — location classified',
+  'Advanced Evasive Driving (gold seal)',
+  'Master of Disguise, distinction',
+  'Counter-Surveillance, certified',
+  'Etiquette & High-Society Cover',
+  'Lock Appreciation Society, lifetime member',
+]
+
+// Pink target reticle — concentric rings plus crosshair lines, exported as a data URI.
+const reticleSvg = `<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><g fill='none' stroke='%23ec4899' stroke-width='2'><circle cx='250' cy='250' r='230' stroke-opacity='0.25'/><circle cx='250' cy='250' r='170' stroke-opacity='0.4'/><circle cx='250' cy='250' r='110' stroke-opacity='0.6'/><circle cx='250' cy='250' r='50' stroke-opacity='0.9'/></g><g stroke='%23f472b6' stroke-width='2'><line x1='250' y1='10' x2='250' y2='130' stroke-opacity='0.7'/><line x1='250' y1='370' x2='250' y2='490' stroke-opacity='0.7'/><line x1='10' y1='250' x2='130' y2='250' stroke-opacity='0.7'/><line x1='370' y1='250' x2='490' y2='250' stroke-opacity='0.7'/></g><circle cx='250' cy='250' r='5' fill='%23ec4899'/></svg>`
+const reticleUri = `url("data:image/svg+xml,${reticleSvg}")`
+---
+
+<Layout
+  title="Summer — Elite Operative for Hire"
+  description="Summer — discreet, professional, impossibly stylish. An (entirely fictional) elite operative for hire. A tongue-in-cheek spy-thriller persona card."
+  themeClass="bg-black text-neutral-100"
+>
+  <style define:vars={{ reticleUri }}>
+    .reticle {
+      background-image: var(--reticleUri);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .reticle-spin {
+        animation: reticle-spin 36s linear infinite;
+      }
+      @keyframes reticle-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+    .glow {
+      text-shadow: 0 0 28px rgba(236, 72, 153, 0.45);
+    }
+  </style>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div
+      class="pointer-events-none absolute -right-24 top-1/2 hidden aspect-square w-[44rem] -translate-y-1/2 opacity-30 sm:block"
+      aria-hidden="true"
+    >
+      <div class="reticle reticle-spin h-full w-full"></div>
+    </div>
+    <div
+      class="pointer-events-none absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"
+      aria-hidden="true"
+    >
+    </div>
+    <div class="relative mx-auto max-w-5xl px-4 py-28 sm:py-40">
+      <p
+        class="mb-6 inline-flex items-center gap-2 border border-pink-500/60 px-3 py-1 text-[0.65rem] font-light uppercase tracking-[0.45em] text-pink-400"
+      >
+        <span class="inline-block h-1.5 w-1.5 rounded-full bg-pink-500"></span>
+        Elite Operative for Hire
+      </p>
+      <h1
+        class="glow text-7xl font-thin uppercase leading-none tracking-[0.1em] text-white sm:text-9xl"
+      >
+        Summer
+      </h1>
+      <p class="mt-6 max-w-xl text-lg font-light leading-relaxed tracking-wide text-neutral-300 sm:text-xl">
+        Discreet. Immaculate. Never twice in the same wig. The job is always done
+        by the time you finish your drink, and the only thing left behind is a
+        single pink silk ribbon. <span class="text-neutral-500">(Entirely fictional. Obviously.)</span>
+      </p>
+      <p class="mt-5 text-sm font-light uppercase tracking-[0.3em] text-pink-400">
+        ★★★★★ — Discreet, professional, suspiciously well dressed
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a
+          href="#contact"
+          class="group inline-flex items-center gap-3 border border-pink-500 px-8 py-3 text-xs font-light uppercase tracking-[0.3em] text-pink-300 transition-colors hover:bg-pink-500 hover:text-black"
+        >
+          Initiate contact
+          <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+        </a>
+        <a
+          href="#specialities"
+          class="inline-flex items-center px-8 py-3 text-xs font-light uppercase tracking-[0.3em] text-neutral-400 transition-colors hover:text-white"
+        >
+          View capabilities
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <section class="border-y border-pink-500/30 bg-neutral-950">
+    <div class="mx-auto grid max-w-5xl grid-cols-2 gap-y-8 px-4 py-12 sm:grid-cols-4">
+      {
+        stats.map((s) => (
+          <div class="border-l border-pink-500/20 px-4 text-center first:border-l-0 sm:text-left">
+            <div class="glow text-3xl font-thin tracking-wide text-pink-400 sm:text-4xl">
+              {s.value}
+            </div>
+            <div class="mt-2 text-[0.65rem] font-light uppercase tracking-[0.3em] text-neutral-500">
+              {s.label}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- SPECIALITIES -->
+  <section id="specialities" class="mx-auto max-w-5xl px-4 py-24">
+    <p class="text-xs font-light uppercase tracking-[0.4em] text-pink-500">Capabilities</p>
+    <h2 class="mt-3 text-4xl font-thin uppercase tracking-[0.08em] text-white sm:text-5xl">
+      Specialities
+    </h2>
+    <div class="mt-3 h-px w-24 bg-pink-500"></div>
+    <div class="mt-12 grid gap-px overflow-hidden border border-pink-500/15 bg-pink-500/10 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        specialities.map((s) => (
+          <article class="group relative bg-black p-8 transition-colors hover:bg-neutral-950">
+            <div class="text-3xl" aria-hidden="true">
+              {s.icon}
+            </div>
+            <h3 class="mt-5 text-base font-light uppercase tracking-[0.2em] text-pink-300">
+              {s.title}
+            </h3>
+            <p class="mt-3 text-sm font-light leading-relaxed text-neutral-400">{s.body}</p>
+            <div class="mt-6 h-px w-8 bg-pink-500/40 transition-all duration-300 group-hover:w-16" aria-hidden="true" />
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- DOSSIER -->
+  <section class="border-y border-pink-500/30 bg-neutral-950">
+    <div class="mx-auto max-w-5xl px-4 py-24">
+      <div class="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div>
+          <p class="text-xs font-light uppercase tracking-[0.4em] text-pink-500">Operative Profile</p>
+          <h2 class="mt-3 text-4xl font-thin uppercase tracking-[0.08em] text-white sm:text-5xl">
+            The Dossier
+          </h2>
+          <div class="mt-3 h-px w-24 bg-pink-500"></div>
+          <dl class="mt-10 divide-y divide-pink-500/15 border-y border-pink-500/15">
+            {
+              dossier.map((d) => (
+                <div class="flex items-baseline justify-between gap-6 py-4">
+                  <dt class="text-[0.65rem] font-light uppercase tracking-[0.3em] text-neutral-500">
+                    {d.label}
+                  </dt>
+                  <dd class="text-right text-sm font-light tracking-wide text-pink-200">{d.value}</dd>
+                </div>
+              ))
+            }
+          </dl>
+          <p class="mt-6 text-xs font-light italic tracking-wide text-neutral-600">
+            Contents redacted by order of nobody in particular. This profile is a
+            costume, a wink and a bit of fun. No actual mysteries were solved in
+            the making of this CV.
+          </p>
+        </div>
+        <div
+          class="mx-auto hidden aspect-square w-72 lg:block"
+          aria-hidden="true"
+        >
+          <div class="reticle reticle-spin h-full w-full opacity-80"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINING & CREDENTIALS -->
+  <section class="mx-auto max-w-5xl px-4 py-24">
+    <p class="text-xs font-light uppercase tracking-[0.4em] text-pink-500">For the Record</p>
+    <h2 class="mt-3 text-4xl font-thin uppercase tracking-[0.08em] text-white sm:text-5xl">
+      Training &amp; Credentials
+    </h2>
+    <div class="mt-3 h-px w-24 bg-pink-500"></div>
+    <ul class="mt-10 grid gap-4 sm:grid-cols-2">
+      {
+        credentials.map((c) => (
+          <li class="flex items-start gap-4 border border-pink-500/15 bg-neutral-950 px-5 py-4 transition-colors hover:border-pink-500/50">
+            <span class="mt-1.5 inline-block h-2 w-2 flex-none rotate-45 border border-pink-400" aria-hidden="true" />
+            <span class="text-sm font-light tracking-wide text-neutral-300">{c}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="relative overflow-hidden border-t border-pink-500/30 bg-neutral-950">
+    <div
+      class="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[40rem] -translate-x-1/2 -translate-y-1/2 opacity-20"
+      aria-hidden="true"
+    >
+      <div class="reticle reticle-spin h-full w-full"></div>
+    </div>
+    <div class="relative mx-auto max-w-5xl px-4 py-28 text-center">
+      <h2 class="glow text-4xl font-thin uppercase tracking-[0.1em] text-white sm:text-6xl">
+        Request a quote — discreetly
+      </h2>
+      <p class="mx-auto mt-6 max-w-lg text-sm font-light leading-relaxed tracking-wide text-neutral-400">
+        Strictly by appointment. No names, no fuss, no paper trail. Leave a
+        message and the orchid will find you.
+      </p>
+      <a
+        href="mailto:summer@example.com"
+        class="group mt-10 inline-flex items-center gap-3 border border-pink-500 bg-pink-500 px-12 py-4 text-xs font-light uppercase tracking-[0.35em] text-black shadow-[0_0_40px_rgba(236,72,153,0.35)] transition-all hover:bg-black hover:text-pink-300"
+      >
+        Initiate contact
+        <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+</Layout>

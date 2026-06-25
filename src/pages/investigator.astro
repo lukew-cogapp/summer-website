@@ -1,0 +1,318 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const services = [
+  {
+    title: 'Covert Surveillance',
+    body: 'Discreet observation, photographic logs and detailed movement reports. You never see me. You only see the file.',
+    icon: '👁️',
+  },
+  {
+    title: 'Background Checks',
+    body: 'Who they say they are, and who they actually are. Public records, history and the gaps in between.',
+    icon: '🗂️',
+  },
+  {
+    title: 'Missing Persons',
+    body: 'Last known whereabouts, leads and legwork. When the trail goes cold, I bring a lamp.',
+    icon: '🔦',
+  },
+  {
+    title: 'Infidelity Cases',
+    body: 'The truth, gently delivered and quietly documented. Whatever the answer, you deserve to know it.',
+    icon: '💋',
+  },
+  {
+    title: 'Corporate Due Diligence',
+    body: 'Before you sign, let me read between the lines. Partners, accounts and the skeletons in the filing cabinet.',
+    icon: '🏢',
+  },
+  {
+    title: 'Skip Tracing',
+    body: 'People who would rather not be found. Debtors, witnesses, ghosts. I follow the paper until it talks.',
+    icon: '🧭',
+  },
+]
+
+const methods = [
+  'Covert Surveillance',
+  'OSINT',
+  'Interview Technique',
+  'Evidence Handling',
+  'Discretion',
+  'Photography',
+  'Records Research',
+  'Counter-Surveillance',
+  'Statement Analysis',
+  'Chain of Custody',
+]
+
+const cases = [
+  {
+    number: 'CASE NO. 0481-S',
+    title: 'The Lipstick Ledger',
+    status: 'SOLVED',
+    summary:
+      'Engaged by a private client to verify suspected misappropriation of company funds. Three weeks of surveillance and a single discarded receipt closed the matter.',
+    redacted: ['the subject met regularly at', 'transferred a total of', 'identity confirmed via'],
+  },
+  {
+    number: 'CASE NO. 0517-M',
+    title: 'The Vanishing Tenant',
+    status: 'CLOSED',
+    summary:
+      'Located a missing party who had relocated under a new name. Reunited with family within nine days of opening the file.',
+    redacted: ['new alias registered as', 'last seen boarding the', 'present address withheld at'],
+  },
+  {
+    number: 'CASE NO. 0533-D',
+    title: 'The Boardroom Leak',
+    status: 'SOLVED',
+    summary:
+      'Corporate client suspected an internal source feeding confidential figures to a competitor. Source identified, documented and quietly shown the door.',
+    redacted: ['leak originated from the', 'evidence handed to', 'settlement reached for'],
+  },
+]
+
+const stats = [
+  { value: '147', label: 'Cases Closed' },
+  { value: '100%', label: 'Discretion' },
+  { value: '12', label: 'Years on the Beat' },
+  { value: '0', label: 'Loose Ends' },
+]
+---
+
+<Layout
+  title="Summer — Private Investigator"
+  description="Summer — discreet private investigator. Surveillance, background checks, missing persons and corporate due diligence. The truth, handled quietly."
+  themeClass="bg-zinc-950 text-zinc-100"
+>
+  <style>
+    /* Venetian-blind slat lighting — warm amber slats fading down the hero */
+    .blinds {
+      background-image: repeating-linear-gradient(
+        to bottom,
+        rgba(251, 191, 36, 0.07) 0px,
+        rgba(251, 191, 36, 0.07) 3px,
+        transparent 3px,
+        transparent 26px
+      );
+    }
+    /* Pooled spotlight, top-right, like a desk lamp through a window */
+    .lamplight {
+      background:
+        radial-gradient(
+          120% 90% at 78% 8%,
+          rgba(251, 191, 36, 0.18) 0%,
+          rgba(251, 191, 36, 0.06) 32%,
+          transparent 62%
+        );
+    }
+    /* Redaction bars — solid black, smudged edges, hide the text beneath */
+    .redacted {
+      position: relative;
+      color: transparent;
+      user-select: none;
+    }
+    .redacted::after {
+      content: '';
+      position: absolute;
+      inset: -0.1em -0.15em;
+      background: #09090b;
+      border-radius: 1px;
+      box-shadow: 0 0 1px 1px #09090b;
+    }
+    /* Stamp look — rotated, ringed, slightly distressed */
+    .stamp {
+      border: 2px solid currentColor;
+      border-radius: 4px;
+      transform: rotate(-9deg);
+      letter-spacing: 0.25em;
+    }
+  </style>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden border-b border-amber-500/20">
+    <div class="lamplight absolute inset-0" aria-hidden="true"></div>
+    <div class="blinds absolute inset-0" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-5xl px-4 py-24 sm:py-32">
+      <p
+        class="mb-5 inline-block border border-amber-400/60 bg-zinc-950/60 px-3 py-1 font-mono text-xs uppercase tracking-[0.35em] text-amber-300"
+      >
+        Private Investigator
+      </p>
+      <h1 class="text-6xl font-black uppercase tracking-tight text-zinc-50 sm:text-8xl">
+        Summer
+      </h1>
+      <p class="mt-4 max-w-2xl font-mono text-lg uppercase tracking-[0.2em] text-amber-200 sm:text-xl">
+        Discreet Private Investigator
+      </p>
+      <p class="mt-6 max-w-xl text-base leading-relaxed text-zinc-300 sm:text-lg">
+        Everybody has a story they would rather keep in the dark. I find the part
+        they left out. Quiet, careful, and always off the record until you say
+        otherwise. If it can be known, I will know it. If it should stay buried,
+        that is between us.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a
+          href="#contact"
+          class="rounded-sm bg-amber-400 px-6 py-3 font-mono text-sm font-bold uppercase tracking-widest text-zinc-950 shadow-lg transition-colors hover:bg-amber-300"
+        >
+          Open a case file
+        </a>
+        <a
+          href="#services"
+          class="rounded-sm border border-amber-400/60 px-6 py-3 font-mono text-sm font-bold uppercase tracking-widest text-amber-200 transition-colors hover:bg-amber-400 hover:text-zinc-950"
+        >
+          What I handle
+        </a>
+      </div>
+
+      <!-- CONFIDENTIAL stamp + pink lipstick detail -->
+      <div class="pointer-events-none absolute right-4 top-8 select-none sm:right-10 sm:top-16" aria-hidden="true">
+        <span class="stamp inline-block px-4 py-2 font-mono text-sm font-black uppercase text-red-500/70 sm:text-base">
+          Confidential
+        </span>
+      </div>
+      <span
+        class="pointer-events-none absolute bottom-10 right-8 select-none text-4xl opacity-70 sm:bottom-16 sm:right-24 sm:text-5xl"
+        style="transform: rotate(18deg)"
+        aria-hidden="true"
+      >💋</span>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <section class="border-b border-amber-500/20 bg-zinc-900">
+    <div class="mx-auto grid max-w-5xl grid-cols-2 gap-y-8 px-4 py-10 sm:grid-cols-4">
+      {
+        stats.map((s) => (
+          <div class="text-center">
+            <div class="font-mono text-4xl font-black text-amber-400 sm:text-5xl">{s.value}</div>
+            <div class="mt-1 font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-400">
+              {s.label}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="mx-auto max-w-5xl px-4 py-20">
+    <h2 class="text-3xl font-black uppercase tracking-tight text-zinc-50 sm:text-4xl">
+      Case Types
+    </h2>
+    <div class="mt-2 h-1 w-24 bg-amber-400"></div>
+    <p class="mt-4 max-w-2xl font-mono text-sm text-zinc-400">
+      Select your file. Every case is handled personally, documented thoroughly
+      and held in the strictest confidence.
+    </p>
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        services.map((s) => (
+          <article class="group relative overflow-hidden rounded-sm border border-zinc-700 bg-zinc-900 p-6 transition-colors hover:border-amber-400/70">
+            {/* Manila case-file tab */}
+            <span class="absolute -top-px left-6 h-2 w-12 rounded-b-sm bg-amber-400/80 transition-colors group-hover:bg-amber-300" aria-hidden="true" />
+            <div class="text-3xl" aria-hidden="true">
+              {s.icon}
+            </div>
+            <h3 class="mt-4 font-mono text-base font-bold uppercase tracking-wide text-amber-200">
+              {s.title}
+            </h3>
+            <p class="mt-2 text-sm leading-relaxed text-zinc-300">{s.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- SKILLS & METHODS -->
+  <section class="border-y border-amber-500/20 bg-zinc-900">
+    <div class="mx-auto max-w-5xl px-4 py-20">
+      <h2 class="text-3xl font-black uppercase tracking-tight text-zinc-50 sm:text-4xl">
+        Skills &amp; Methods
+      </h2>
+      <div class="mt-2 h-1 w-24 bg-amber-400"></div>
+      <div class="mt-8 flex flex-wrap gap-3">
+        {
+          methods.map((m) => (
+            <span class="rounded-sm border border-amber-400/40 bg-zinc-950 px-4 py-2 font-mono text-xs uppercase tracking-widest text-amber-200 transition-colors hover:border-amber-400 hover:bg-amber-400 hover:text-zinc-950">
+              {m}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE RECORDS / DOSSIER -->
+  <section class="mx-auto max-w-5xl px-4 py-20">
+    <h2 class="text-3xl font-black uppercase tracking-tight text-zinc-50 sm:text-4xl">
+      Case Record
+    </h2>
+    <div class="mt-2 h-1 w-24 bg-amber-400"></div>
+    <p class="mt-4 max-w-2xl font-mono text-sm text-zinc-400">
+      Selected closed files. Details redacted to protect the people who trusted me
+      with them.
+    </p>
+    <div class="mt-10 space-y-6">
+      {
+        cases.map((c) => (
+          <article class="relative overflow-hidden rounded-sm border-2 border-zinc-700 bg-zinc-900 p-6 sm:p-8">
+            {/* pink case-file tab to tie to the site signature */}
+            <span class="absolute right-0 top-0 h-full w-1.5 bg-pink-500/80" aria-hidden="true" />
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
+              <div>
+                <p class="font-mono text-xs uppercase tracking-[0.3em] text-amber-400">{c.number}</p>
+                <h3 class="mt-2 font-mono text-xl font-bold uppercase tracking-wide text-zinc-50">
+                  {c.title}
+                </h3>
+              </div>
+              <span
+                class={`stamp inline-block self-start whitespace-nowrap px-3 py-1.5 font-mono text-xs font-black uppercase ${
+                  c.status === 'SOLVED' ? 'text-emerald-400/80' : 'text-amber-400/80'
+                }`}
+              >
+                {c.status}
+              </span>
+            </div>
+            <p class="mt-4 max-w-2xl text-sm leading-relaxed text-zinc-300">{c.summary}</p>
+            <dl class="mt-5 space-y-2 border-t border-zinc-700/70 pt-5 font-mono text-sm text-zinc-300">
+              {c.redacted.map((line) => (
+                <div class="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                  <dt class="text-zinc-400">{line}</dt>
+                  <dd>
+                    <span class="redacted rounded-sm align-baseline">CLASSIFIED INFO HERE</span>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="relative overflow-hidden border-t border-amber-500/20">
+    <div class="lamplight absolute inset-0" aria-hidden="true"></div>
+    <div class="blinds absolute inset-0" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-5xl px-4 py-24 text-center">
+      <p class="font-mono text-xs uppercase tracking-[0.35em] text-amber-300">Strictly Confidential</p>
+      <h2 class="mt-4 text-4xl font-black uppercase tracking-tight text-zinc-50 sm:text-5xl">
+        Make contact
+      </h2>
+      <p class="mx-auto mt-4 max-w-xl text-base text-zinc-300 sm:text-lg">
+        Got a question that keeps you up at night? Bring it into the light. First
+        conversation is private, no obligation, no names if you would rather.
+      </p>
+      <a
+        href="mailto:summer@example.com"
+        class="mt-8 inline-block rounded-sm bg-amber-400 px-10 py-4 font-mono text-base font-bold uppercase tracking-widest text-zinc-950 shadow-xl transition-transform hover:scale-105 hover:bg-amber-300"
+      >
+        Open a case file
+      </a>
+    </div>
+  </section>
+</Layout>

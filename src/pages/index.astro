@@ -54,6 +54,45 @@ const areas = [
     glow: 'group-hover:shadow-fuchsia-900/40',
     icon: '★',
   },
+  {
+    href: '/investigator/',
+    title: 'Private Investigator',
+    blurb:
+      'Discreet investigations, surveillance and background checks. Whether it is a missing person or a quiet question that needs answering, I dig until the truth turns up.',
+    dark: true,
+    ring: 'group-hover:ring-amber-500/50',
+    bar: 'bg-amber-500',
+    chip: 'bg-amber-500/15 text-amber-300',
+    link: 'text-amber-300',
+    glow: 'group-hover:shadow-amber-900/40',
+    icon: '◉',
+  },
+  {
+    href: '/hitwoman/',
+    title: 'Hitwoman',
+    blurb:
+      'Elite operative for hire (entirely fictional). Stealth, disguise and getaway driving that would make a stunt coordinator blush. No targets were harmed in the making of this CV.',
+    dark: true,
+    ring: 'group-hover:ring-pink-500/60',
+    bar: 'bg-pink-500',
+    chip: 'bg-pink-500/15 text-pink-400',
+    link: 'text-pink-400',
+    glow: 'group-hover:shadow-pink-900/40',
+    icon: '⊕',
+  },
+  {
+    href: '/tattoo/',
+    title: 'Tattoo Artist',
+    blurb:
+      'Black and grey realism, fine line and fully custom designs. I also love a clever cover-up, turning a regret into something you will actually want to show off.',
+    dark: true,
+    ring: 'group-hover:ring-pink-500/60',
+    bar: 'bg-pink-500',
+    chip: 'bg-pink-500/15 text-pink-400',
+    link: 'text-pink-400',
+    glow: 'group-hover:shadow-pink-900/40',
+    icon: '✶',
+  },
 ]
 ---
 
@@ -106,14 +145,16 @@ const areas = [
       Where I work
     </h2>
     <p class="mb-8 text-slate-600">
-      Three distinct worlds, one curious mind. Pick one to dive in.
+      Seven distinct worlds, one curious mind. Pick one to dive in.
     </p>
-    <div class="grid gap-6 sm:grid-cols-2">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {
-        areas.map((area) => (
+        areas.map((area, i) => (
           <a
             href={area.href}
             class={`group relative flex flex-col rounded-3xl p-7 ring-1 transition duration-300 hover:-translate-y-2 hover:shadow-2xl ${area.ring} ${area.glow} ${
+              i === 0 ? 'sm:col-span-2 lg:col-span-3' : ''
+            } ${
               area.dark
                 ? 'bg-stone-900 ring-stone-700'
                 : 'bg-white ring-slate-200'

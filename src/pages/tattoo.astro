@@ -1,0 +1,354 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const styles = [
+  {
+    name: 'Black & grey realism',
+    desc: 'Smooth gradients and soft shadow work. Portraits, animals and detail that reads from across the room.',
+    icon: '🖤',
+  },
+  {
+    name: 'Fine line',
+    desc: 'Delicate single-needle work. Minimal, precise and quietly confident. Less is genuinely more.',
+    icon: '✒️',
+  },
+  {
+    name: 'Blackwork',
+    desc: 'Bold solid black, ornamental patterns and heavy contrast. Striking on day one, striking in ten years.',
+    icon: '◼️',
+  },
+  {
+    name: 'Traditional',
+    desc: 'Clean bold lines and timeless motifs. The classics, done properly, built to age beautifully.',
+    icon: '⚓',
+  },
+  {
+    name: 'Lettering & script',
+    desc: 'Custom hand-drawn type. Quotes, names and dates with the weight and flow they deserve.',
+    icon: '✍️',
+  },
+  {
+    name: 'Custom design',
+    desc: 'Your idea, drawn from scratch to fit your body. No flash copies, no two the same.',
+    icon: '🎯',
+  },
+  {
+    name: 'Cover-ups',
+    desc: 'Old ink reimagined. I work with what is there to give you something you are proud of again.',
+    icon: '♻️',
+  },
+  {
+    name: 'Floral & botanical',
+    desc: 'Soft grey-wash petals and linework foliage. Pretty, organic and made to wrap the body.',
+    icon: '🌿',
+  },
+]
+
+const flash = [
+  { id: 'Flash 01', label: 'Serpent & dagger' },
+  { id: 'Flash 02', label: 'Moth' },
+  { id: 'Flash 03', label: 'Rose, fine line' },
+  { id: 'Flash 04', label: 'Mountain range' },
+  { id: 'Flash 05', label: 'Script — "stay soft"' },
+  { id: 'Flash 06', label: 'Sacred heart' },
+  { id: 'Flash 07', label: 'Crescent moon' },
+  { id: 'Flash 08', label: 'Geometric wolf' },
+]
+
+const process = [
+  {
+    step: '01',
+    title: 'Consultation',
+    desc: 'We talk it through — placement, size, references and budget. No pressure, just a proper plan.',
+  },
+  {
+    step: '02',
+    title: 'Design',
+    desc: 'I draw your piece custom. You see it before the needle touches skin, and we tweak until it is right.',
+  },
+  {
+    step: '03',
+    title: 'Stencil',
+    desc: 'On the day we place the stencil and check the fit together. Nothing starts until you are happy.',
+  },
+  {
+    step: '04',
+    title: 'Session',
+    desc: 'Sterile, single-use everything. We take breaks, keep it comfy and chip away until it is done.',
+  },
+  {
+    step: '05',
+    title: 'Aftercare',
+    desc: 'You leave wrapped with clear written aftercare and a way to reach me if anything looks off.',
+  },
+]
+
+const expect = [
+  {
+    title: 'Sterile & licensed',
+    desc: 'Fully registered studio, single-use needles, hospital-grade hygiene. Non-negotiable.',
+  },
+  {
+    title: 'Custom only',
+    desc: 'Every design is drawn for you. I will happily turn a brief into something one of a kind.',
+  },
+  {
+    title: 'Deposits',
+    desc: 'A small deposit books your slot and goes toward the final cost. It covers the design time.',
+  },
+  {
+    title: 'Aftercare guidance',
+    desc: 'Written instructions, product recommendations and a check-in. Healing is half the work.',
+  },
+]
+
+const stats = [
+  { value: '500+', label: 'pieces inked' },
+  { value: '8 yrs', label: 'behind the machine' },
+  { value: '100%', label: 'single-use needles' },
+]
+---
+
+<Layout
+  title="Summer — Tattoo Artist"
+  description="Summer: black & grey tattoo artist. Custom realism, fine line, blackwork and cover-ups in a sterile, licensed studio."
+  themeClass="bg-neutral-950 text-neutral-100"
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden border-b border-white/10">
+    <!-- subtle grid texture -->
+    <div
+      class="pointer-events-none absolute inset-0 opacity-[0.07]"
+      style="background-image: linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px); background-size: 44px 44px;"
+    >
+    </div>
+    <div class="relative mx-auto max-w-5xl px-4 py-24 sm:py-32">
+      <p
+        class="mb-5 inline-block rounded-full border border-pink-500/50 bg-pink-500/10 px-4 py-1 text-sm font-semibold uppercase tracking-widest text-pink-400"
+      >
+        Tattoo artist · black &amp; grey
+      </p>
+      <h1
+        class="text-6xl font-black uppercase leading-none tracking-tight sm:text-8xl"
+      >
+        <span
+          class="text-pink-500"
+          style="text-shadow: 0 0 8px rgba(236,72,153,0.9), 0 0 24px rgba(236,72,153,0.65), 0 0 48px rgba(236,72,153,0.45);"
+          >Summer</span
+        >
+      </h1>
+      <p class="mt-4 text-lg font-semibold uppercase tracking-[0.3em] text-neutral-400">
+        Ink that lasts
+      </p>
+      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-neutral-300 sm:text-xl">
+        Black, grey and a whole lot of heart. I draw custom pieces that mean
+        something and wear them for life. Soft realism, sharp fine line and the
+        odd pop of pink, because of course. Come as you are. Leave with art.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a
+          href="#book"
+          class="rounded-full bg-pink-500 px-7 py-3 font-bold text-neutral-950 shadow-[0_0_25px_rgba(236,72,153,0.5)] transition-transform hover:scale-105 hover:bg-pink-400"
+        >
+          Book a consultation
+        </a>
+        <a
+          href="#flash"
+          class="rounded-full border border-white/25 px-7 py-3 font-bold text-neutral-100 transition-colors hover:border-pink-500 hover:text-pink-400"
+        >
+          See the work
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Styles -->
+  <section class="mx-auto max-w-5xl px-4 py-16 sm:py-24">
+    <div class="mb-12 text-center">
+      <h2 class="text-3xl font-black uppercase tracking-tight sm:text-4xl">
+        What I <span class="text-pink-500">ink</span>
+      </h2>
+      <p class="mt-3 text-neutral-400">Pick a lane, or let me blend them.</p>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        styles.map((s) => (
+          <article class="group rounded-2xl border border-white/10 bg-neutral-900 p-6 transition-all hover:-translate-y-1 hover:border-pink-500/60 hover:shadow-[0_0_30px_rgba(236,72,153,0.18)]">
+            <span class="text-3xl transition-transform group-hover:scale-110">
+              {s.icon}
+            </span>
+            <h3 class="mt-4 text-lg font-bold text-neutral-100 group-hover:text-pink-400">
+              {s.name}
+            </h3>
+            <p class="mt-2 text-sm leading-relaxed text-neutral-400">{s.desc}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Flash / portfolio gallery wall -->
+  <section id="flash" class="border-y border-white/10 bg-neutral-900/50">
+    <div class="mx-auto max-w-5xl px-4 py-16 sm:py-24">
+      <div class="mb-12 text-center">
+        <h2 class="text-3xl font-black uppercase tracking-tight sm:text-4xl">
+          The <span class="text-pink-500">flash</span> wall
+        </h2>
+        <p class="mt-3 text-neutral-400">
+          Available designs, first come first served. Real shots dropping soon.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+        {
+          flash.map((f) => (
+            <figure class="group relative aspect-square overflow-hidden rounded-xl border border-white/10 bg-neutral-950 p-3 transition-colors hover:border-pink-500/60">
+              <div class="flex h-full w-full items-center justify-center rounded-lg border border-dashed border-white/15 bg-gradient-to-br from-neutral-900 to-neutral-950">
+                <svg
+                  viewBox="0 0 100 100"
+                  class="h-1/2 w-1/2 text-neutral-700 transition-colors group-hover:text-pink-500"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <circle cx="50" cy="50" r="34" />
+                  <path d="M50 16 L50 84 M16 50 L84 50" />
+                  <path d="M30 30 L70 70 M70 30 L30 70" opacity="0.5" />
+                </svg>
+              </div>
+              <figcaption class="absolute inset-x-3 bottom-3 flex items-center justify-between rounded-md bg-neutral-950/80 px-3 py-1.5 text-xs backdrop-blur">
+                <span class="font-bold uppercase tracking-wider text-pink-400">
+                  {f.id}
+                </span>
+                <span class="text-neutral-400">{f.label}</span>
+              </figcaption>
+            </figure>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- The process -->
+  <section class="mx-auto max-w-5xl px-4 py-16 sm:py-24">
+    <div class="mb-12 text-center">
+      <h2 class="text-3xl font-black uppercase tracking-tight sm:text-4xl">
+        The <span class="text-pink-500">process</span>
+      </h2>
+      <p class="mt-3 text-neutral-400">From idea to healed. No surprises.</p>
+    </div>
+    <ol class="relative space-y-6 border-l border-white/10 pl-8 sm:pl-10">
+      {
+        process.map((p) => (
+          <li class="relative">
+            <span class="absolute -left-[2.45rem] flex h-10 w-10 items-center justify-center rounded-full border border-pink-500/50 bg-neutral-950 text-sm font-black text-pink-400 shadow-[0_0_16px_rgba(236,72,153,0.4)] sm:-left-[3.2rem]">
+              {p.step}
+            </span>
+            <div class="rounded-2xl border border-white/10 bg-neutral-900 p-5">
+              <h3 class="text-lg font-bold text-neutral-100">{p.title}</h3>
+              <p class="mt-1 text-sm leading-relaxed text-neutral-400">
+                {p.desc}
+              </p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <!-- Stats band -->
+  <section class="mx-auto max-w-5xl px-4 pb-4">
+    <div
+      class="grid grid-cols-3 gap-4 rounded-2xl border border-pink-500/20 bg-neutral-900 p-8 text-center shadow-[0_0_40px_rgba(236,72,153,0.1)]"
+    >
+      {
+        stats.map((stat) => (
+          <div>
+            <div
+              class="text-3xl font-black text-pink-500 sm:text-5xl"
+              style="text-shadow: 0 0 16px rgba(236,72,153,0.6);"
+            >
+              {stat.value}
+            </div>
+            <div class="mt-1 text-xs font-medium uppercase tracking-wider text-neutral-400 sm:text-sm">
+              {stat.label}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- What to expect / studio info -->
+  <section class="mx-auto max-w-5xl px-4 py-16 sm:py-24">
+    <div class="mb-12 text-center">
+      <h2 class="text-3xl font-black uppercase tracking-tight sm:text-4xl">
+        What to <span class="text-pink-500">expect</span>
+      </h2>
+      <p class="mt-3 text-neutral-400">Clean studio, clear plan, good company.</p>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2">
+      {
+        expect.map((e) => (
+          <article class="flex gap-4 rounded-2xl border border-white/10 bg-neutral-900 p-6">
+            <span class="mt-1 inline-block h-3 w-3 shrink-0 rounded-full bg-pink-500 shadow-[0_0_10px_rgba(236,72,153,0.8)]" />
+            <div>
+              <h3 class="text-base font-bold text-neutral-100">{e.title}</h3>
+              <p class="mt-1 text-sm leading-relaxed text-neutral-400">
+                {e.desc}
+              </p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="mx-auto max-w-5xl px-4 pb-8">
+    <blockquote class="text-center">
+      <p
+        class="text-2xl font-black uppercase italic tracking-tight text-pink-500 sm:text-3xl"
+        style="text-shadow: 0 0 18px rgba(236,72,153,0.5);"
+      >
+        "Wear your story on your skin."
+      </p>
+      <footer class="mt-3 text-sm font-medium uppercase tracking-widest text-neutral-500">
+        — Summer
+      </footer>
+    </blockquote>
+  </section>
+
+  <!-- CTA -->
+  <section id="book" class="mx-auto max-w-5xl px-4 pb-20">
+    <div
+      class="relative overflow-hidden rounded-[2rem] border border-pink-500/30 bg-neutral-900 p-10 text-center shadow-[0_0_60px_rgba(236,72,153,0.15)] sm:p-16"
+    >
+      <div
+        class="pointer-events-none absolute inset-0 opacity-[0.06]"
+        style="background-image: linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px); background-size: 36px 36px;"
+      >
+      </div>
+      <div class="relative">
+        <h2
+          class="text-3xl font-black uppercase tracking-tight sm:text-5xl"
+        >
+          Got an <span
+            class="text-pink-500"
+            style="text-shadow: 0 0 14px rgba(236,72,153,0.7);">idea</span
+          >?
+        </h2>
+        <p class="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-neutral-300">
+          Bring me your half-formed sketches, your references and your maybes. We
+          will turn it into something permanent and properly you.
+        </p>
+        <a
+          href="mailto:summer@example.com"
+          class="mt-8 inline-block rounded-full bg-pink-500 px-8 py-4 text-lg font-bold text-neutral-950 shadow-[0_0_30px_rgba(236,72,153,0.5)] transition-transform hover:scale-105 hover:bg-pink-400"
+        >
+          Book a consultation →
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
