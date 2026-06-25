@@ -5,6 +5,8 @@ import { defineConfig } from 'astro/config'
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://lukew-cogapp.github.io',
+  base: '/summer-website',
   vite: {
     plugins: [tailwindcss()],
   },

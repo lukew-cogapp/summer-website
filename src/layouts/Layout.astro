@@ -14,15 +14,20 @@ const {
   themeClass = 'bg-white text-slate-900',
 } = Astro.props
 
+const base = import.meta.env.BASE_URL
+/** Join the configured base path with a leading-slash route. */
+const withBase = (p: string) => `${base.replace(/\/$/, '')}${p}`
+
 const nav = [
-  { href: '/', label: 'Home' },
-  { href: '/management/', label: 'Leadership' },
-  { href: '/care/', label: 'Care' },
-  { href: '/hairdressing/', label: 'Hairdressing' },
-  { href: '/army/', label: 'Army Trainer' },
-  { href: '/investigator/', label: 'PI' },
-  { href: '/hitwoman/', label: 'Hitwoman' },
-  { href: '/tattoo/', label: 'Tattoo' },
+  { href: withBase('/'), label: 'Home' },
+  { href: withBase('/management/'), label: 'Leadership' },
+  { href: withBase('/care/'), label: 'Care' },
+  { href: withBase('/hairdressing/'), label: 'Hairdressing' },
+  { href: withBase('/army/'), label: 'Army Trainer' },
+  { href: withBase('/investigator/'), label: 'PI' },
+  { href: withBase('/hitwoman/'), label: 'Hitwoman' },
+  { href: withBase('/tattoo/'), label: 'Tattoo' },
+  { href: withBase('/undertaker/'), label: 'Undertaker' },
 ]
 
 const path = Astro.url.pathname
@@ -34,14 +39,14 @@ const path = Astro.url.pathname
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
     <title>{title}</title>
   </head>
   <body class={`min-h-dvh antialiased ${themeClass}`}>
     <header class="sticky top-0 z-50 border-b border-black/10 bg-white/70 backdrop-blur">
       <nav class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
         <div class="flex items-center gap-2">
-          <a href="/" class="flex items-center gap-2 font-bold text-slate-900">
+          <a href={withBase('/')} class="flex items-center gap-2 font-bold text-slate-900">
             <span class="inline-block h-3 w-3 rounded-full bg-pink-500"></span>
             Summer
           </a>

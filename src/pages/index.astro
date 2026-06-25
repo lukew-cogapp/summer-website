@@ -1,12 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro'
 
+const base = import.meta.env.BASE_URL
+/** Join the configured base path with a leading-slash route. */
+const withBase = (p: string) => `${base.replace(/\/$/, '')}${p}`
+
 // Each card is themed to match the page it links to: same base tone (light or
 // dark) and the same accent colour, so the card previews the page's vibe.
 const areas = [
   {
     // Leadership page: bg-slate-950, violet/indigo accent (dark + confident)
-    href: '/management/',
+    href: withBase('/management/'),
     title: 'Management & Leadership',
     blurb:
       'Leading teams, running smooth operations and bringing out the best in people. From rotas to strategy, I keep things calm, organised and moving forward.',
@@ -22,7 +26,7 @@ const areas = [
   },
   {
     // Care page: bg-teal-50, teal + peach accent (light + warm)
-    href: '/care/',
+    href: withBase('/care/'),
     title: 'Care',
     blurb:
       'Caring for children, vulnerable adults and the elderly with patience and warmth. I treat every person with the dignity and attention they deserve.',
@@ -38,7 +42,7 @@ const areas = [
   },
   {
     // Hairdressing page: bg-pink-50, fuchsia/rose accent (light + playful)
-    href: '/hairdressing/',
+    href: withBase('/hairdressing/'),
     title: 'Hairdressing',
     blurb:
       'Cutting, colour and styling that helps people feel like themselves. Salon-trained, colour-obsessed, and yes, the pink is self-inflicted (proudly).',
@@ -54,7 +58,7 @@ const areas = [
   },
   {
     // Army page: bg-stone-950, pink-camo accent (dark + military pink)
-    href: '/army/',
+    href: withBase('/army/'),
     title: 'Army Trainer',
     blurb:
       'Physical training instruction, drill and discipline. I push recruits to find their limits and then go past them, building leadership under pressure and the kind of resilience that lasts.',
@@ -70,7 +74,7 @@ const areas = [
   },
   {
     // PI page: bg-zinc-950, amber/gold noir accent
-    href: '/investigator/',
+    href: withBase('/investigator/'),
     title: 'Private Investigator',
     blurb:
       'Discreet investigations, surveillance and background checks. Whether it is a missing person or a quiet question that needs answering, I dig until the truth turns up.',
@@ -86,7 +90,7 @@ const areas = [
   },
   {
     // Hitwoman page: bg-black, hot-pink reticle accent (true black, sleek)
-    href: '/hitwoman/',
+    href: withBase('/hitwoman/'),
     title: 'Hitwoman',
     blurb:
       'Elite operative for hire (entirely fictional). Stealth, disguise and getaway driving that would make a stunt coordinator blush. No targets were harmed in the making of this CV.',
@@ -102,7 +106,7 @@ const areas = [
   },
   {
     // Tattoo page: bg-neutral-950, black/grey + neon hot-pink accent
-    href: '/tattoo/',
+    href: withBase('/tattoo/'),
     title: 'Tattoo Artist',
     blurb:
       'Black and grey realism, fine line and fully custom designs. I also love a clever cover-up, turning a regret into something you will actually want to show off.',
@@ -115,6 +119,22 @@ const areas = [
     link: 'text-pink-400',
     glow: 'group-hover:shadow-pink-900/40',
     icon: '✶',
+  },
+  {
+    // Undertaker page: bg-neutral-950, pink-skull / fuchsia accent (pink goth)
+    href: withBase('/undertaker/'),
+    title: 'Undertaker',
+    blurb:
+      'Funeral directing with heart and serious style. I guide families through the hardest days with warmth, calm and a little pink-goth personality.',
+    surface: 'bg-neutral-950 ring-fuchsia-900/50',
+    titleText: 'text-white',
+    bodyText: 'text-neutral-400',
+    ring: 'group-hover:ring-fuchsia-500/60',
+    bar: 'bg-gradient-to-r from-fuchsia-500 to-pink-500',
+    chip: 'bg-fuchsia-500/15 text-fuchsia-300',
+    link: 'text-fuchsia-300',
+    glow: 'group-hover:shadow-fuchsia-900/40',
+    icon: '☠',
   },
 ]
 ---
@@ -136,13 +156,13 @@ const areas = [
       </p>
       <h1 class="text-5xl font-extrabold tracking-tight text-slate-900 sm:text-7xl">
         One person,
-        <span class="text-pink-500">seven</span> worlds.
+        <span class="text-pink-500">eight</span> worlds.
       </h1>
       <p class="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl">
         Leader, carer, hairdresser, drill instructor, private eye, elite operative
-        (allegedly) and tattoo artist. I've never been good at picking just one
-        thing, and somehow it all makes sense. The pink hair? Consider it a
-        permanent name badge.
+        (allegedly), tattoo artist and funeral director. I've never been good at
+        picking just one thing, and somehow it all makes sense. The pink hair?
+        Consider it a permanent name badge.
       </p>
       <div class="mt-8 flex flex-wrap items-center gap-3">
         <a
@@ -168,7 +188,7 @@ const areas = [
       Where I work
     </h2>
     <p class="mb-8 text-slate-600">
-      Seven distinct worlds, one curious mind. Pick one to dive in.
+      Eight distinct worlds, one curious mind. Pick one to dive in.
     </p>
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {
